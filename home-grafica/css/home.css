@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+/*====== REUSABLE CSS CLASSES ======*/
+
+.container {
+  max-width: 1120px;
+  margin: 0 1.5rem;
+}
+
+@media (min-width: 1120px) {
+  .container {
+    margin: 0 auto;
+  }
+}
+.btn {
+  display: block;
+  outline: none;
+  border: none;
+}
+
+/*====== HERO SECTION ======*/
+.hero {
+  background: url(/imgs/g-desktop.png) no-repeat center top fixed;
+  width: 100vw;
+  height: 800px;
+  padding: 44px 0;
+}
+
+/*====== QR CODE MOBILE ======*/
+.qr-button {
+  color: #d8d8d8;
+  text-align: center;
+  background-color: #1b1c1e9d;
+  width: 100px;
+  padding: 12px;
+  border-radius: 10px;
+  position: absolute;
+  /* HEADER HEIGHT */
+  top: 56px;
+  /* RIGHT CONTAINER MARGIN */
+  right: 1.5rem;
+}
+
+.qr-icon path {
+  fill: white;
+}
+
+.showed {
+  display: none;
+}
+
+.qr-mobile--active .showed{
+  text-align: center;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  top: 0;
+  background-color: rgb(13, 13, 53);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.showed-img {
+  margin-bottom: 20px;
+  width: 240px;
+}
+
+.showed-text {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fffefd;
+}
+
+
+.showed .btn-primary {
+  margin-top: 60px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fffefd;
+  background: red;
+  padding: 16px 24px;
+  border-radius: 10px;
+}
+
+
+.showed .arrow-left {
+  cursor: pointer;
+  position: absolute;
+  top: 44px;
+  left: 1.5rem;
+  --container-arrow-size: 56px;
+  width: var(--container-arrow-size);
+  height: var(--container-arrow-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: blanchedalmond;
+  transform: rotate(270deg);
+}
+
+.arrow-left svg {
+  max-width: 100%;
+}
+/*====== QR CODE DESKTOP ======*/
+.circle img {
+  display: none;
+}
+
+
+
+/* ====== FOOTER ====== */
+.footer {
+  background-color: rgb(53, 44, 44);
+  padding: 40px 0;
+}
+
+.footer-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer-copy {
+  
+}
+@media (min-width: 1024px) {
+
+  .qr-code {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 44px;
+    right: 0;
+  }
+
+  .qr-code .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fffefd;
+    width: 11.25rem;
+    height: 11.25rem;
+    border-radius: 50%;
+    /* Make the circle center to the retangle */
+    transform: translateX(12.125rem);
+  }
+
+  .circle img {
+    display: block;
+    width: 140px;
+  }
+
+  .qr-code .retangle {
+    --bg-qr-code: yellow;
+    background-color: var(--bg-qr-code);
+    width: 17.5rem;
+    height: 12.5rem;
+    border-top-left-radius: 7.5rem;
+    border-bottom-left-radius: 7.5rem;
+  }
+}
